@@ -177,3 +177,14 @@ int main() {
                 case 3:
                     tampilAbsensi(user);
                     break;
+
+                case 4:
+                    cout << "Logout akun...\n";
+                    loginAktif = false;
+                    break;
+
+                case 5:
+                    cout << "Keluar dari program...\n";
+                    loginAktif = false;
+                    programJalan = false;
+                    break;
