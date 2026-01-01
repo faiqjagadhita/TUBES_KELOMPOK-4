@@ -16,3 +16,9 @@ int main() {
             cout << "Keluar dari program...\n";
             break;
         }
+
+        adrPegawai user = searchBST(root, idLogin);
+        if (!user) {
+            cout << "ID tidak ditemukan!\n";
+            continue;
+        }
