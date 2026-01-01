@@ -41,3 +41,4 @@ void cariPegawai(adrPegawai root);
 
 /* ===== ABSENSI ===== */
 void tambahAbsensi(adrPegawai p, string tanggal, string jam);
+void tampilAbsensi(adrPegawai p);
