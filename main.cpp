@@ -71,3 +71,7 @@ int main() {
                     cout << "Absensi berhasil!\n";
                     break;
                 }
+
+                case 4:
+                    tampilAbsensi(user);
+                    break;
