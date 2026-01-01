@@ -21,3 +21,9 @@ void insertBST(adrPegawai& root, adrPegawai p) {
     else if (p->id < root->id) insertBST(root->left, p);
     else insertBST(root->right, p);
 }
+
+adrPegawai searchBST(adrPegawai root, int id) {
+    if (!root || root->id == id) return root;
+    if (id < root->id) return searchBST(root->left, id);
+    return searchBST(root->right, id);
+}
