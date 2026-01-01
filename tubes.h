@@ -28,3 +28,4 @@ typedef Pegawai* adrPegawai;
 // BST
 adrPegawai createPegawai(int id, string nama, string jabatan, string role);
 void insertBST(adrPegawai& root, adrPegawai p);
+adrPegawai searchBST(adrPegawai root, int id);
