@@ -141,3 +141,105 @@ void tambahPegawai(adrPegawai& root) {
 
     cout << "Pegawai berhasil ditambahkan!\n";
 }
+
+void ubahPegawai(adrPegawai root) {
+    int id, pilihMenu;
+    adrPegawai p;
+    char pilih;
+
+    while (true) {
+        cout << "Masukkan ID Pegawai: ";
+        cin >> id;
+
+        p = searchBST(root, id);
+        if (!p) {
+            cout << "ID tidak ada!\n";
+            cout << "Masukkan ID lagi? (y/n): ";
+            cin >> pilih;
+
+            if (pilih == 'n' || pilih == 'N')
+                return;
+        } else {
+            break;
+        }
+    }
+
+    cin.ignore();
+
+    bool selesai = false;
+    while (!selesai) {
+        cout << "\n===== MENU UBAH DATA PEGAWAI =====\n";
+        cout << "1. Ubah Nama\n";
+        cout << "2. Ubah Jabatan\n";
+        cout << "3. Ubah Role\n";
+        cout << "4. Selesai\n";
+        cout << "Pilih: ";
+        cin >> pilihMenu;
+        cin.ignore();
+
+        switch (pilihMenu) {
+        case 1:
+            cout << "Nama Baru: ";
+            getline(cin, p->nama);
+            cout << "Nama berhasil diubah!\n";
+            break;
+
+        case 2: {
+            bool valid = false;
+            while (!valid) {
+                string jabatanBaru;
+                cout << "Jabatan Baru: ";
+                getline(cin, jabatanBaru);
+                if (jabatanBaru == "Direktur Utama") {
+                    // Cek apakah sudah ada Direktur Utama selain p
+                    bool adaDirektur = false;
+                    adrPegawai stack[100];
+                    int top = -1;
+                    adrPegawai curr = root;
+
+                    while (curr || top != -1) {
+                        while (curr) {
+                            stack[++top] = curr;
+                            curr = curr->left;
+                        }
+                        curr = stack[top--];
+
+                        if (curr != p && curr->jabatan == "Direktur Utama") {
+                            adaDirektur = true;
+                            break;
+                        }
+                        curr = curr->right;
+                    }
+                    if (adaDirektur) {
+                        cout << "Gagal! Sudah ada Direktur Utama lain.\n";
+                        cout << "Masukkan jabatan lagi!\n";
+                        continue; // suruh input ulang jabatan
+                    }
+                }
+
+                // Jika lolos cek, ubah jabatan
+                p->jabatan = jabatanBaru;
+                cout << "Jabatan berhasil diubah!\n";
+                valid = true;
+            }
+            break;
+        }
+
+
+
+        case 3:
+            cout << "Role Baru (admin/user biasa): ";
+            getline(cin, p->role);
+            cout << "Role berhasil diubah!\n";
+            break;
+
+        case 4:
+            selesai = true;
+            cout << "Selesai mengubah data pegawai.\n";
+            break;
+
+        default:
+            cout << "Pilihan tidak valid!\n";
+        }
+    }
+}
