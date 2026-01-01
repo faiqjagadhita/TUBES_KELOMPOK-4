@@ -35,3 +35,5 @@ void inorderBST(adrPegawai root);
 void tambahPegawai(adrPegawai& root);
 void ubahPegawai(adrPegawai root);
 adrPegawai findMin(adrPegawai root);
+adrPegawai hapusPegawai(adrPegawai root, int id);
+void hapusPegawai(adrPegawai &root);
