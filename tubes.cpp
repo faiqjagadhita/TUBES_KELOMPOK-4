@@ -14,3 +14,10 @@ adrPegawai createPegawai(int id, string nama, string jabatan, string role) {
     p->left = p->right = NULL;
     return p;
 }
+
+// BST
+void insertBST(adrPegawai& root, adrPegawai p) {
+    if (!root) root = p;
+    else if (p->id < root->id) insertBST(root->left, p);
+    else insertBST(root->right, p);
+}
