@@ -40,3 +40,11 @@ int main() {
                 cout << "8. Keluar Program\n";
                 cout << "Pilih: ";
                 cin >> pilih;
+
+                switch (pilih) {
+                case 1:
+                    cout << "\nID: " << user->id
+                         << "\nNama: " << user->nama
+                         << "\nJabatan: " << user->jabatan
+                         << "\nRole: " << user->role << endl;
+                    break;
