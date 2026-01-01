@@ -4,3 +4,6 @@ int main() {
     adrPegawai root = NULL;
     loadCSV(root, "data_pegawai.csv");
 
+    bool programJalan = true;
+
+    while (programJalan) {
