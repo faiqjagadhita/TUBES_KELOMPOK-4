@@ -136,3 +136,16 @@ int main() {
                 }
             }
         }
+
+        // ================= USER =================
+        else {
+            while (loginAktif) {
+                int pilih;
+                cout << "\n===== MENU USER BIASA =====\n";
+                cout << "1. Lihat Profil Saya\n";
+                cout << "2. Absensi Masuk\n";
+                cout << "3. Riwayat Absensi\n";
+                cout << "4. Logout Akun\n";
+                cout << "5. Keluar Program\n";
+                cout << "Pilih: ";
+                cin >> pilih;
