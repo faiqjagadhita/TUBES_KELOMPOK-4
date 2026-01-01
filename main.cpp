@@ -114,3 +114,8 @@ int main() {
                     }
                     break;
                 }
+
+                case 6:
+                    cariPegawai(root);
+                    saveCSV(root, "data_pegawai.csv");
+                    break;
