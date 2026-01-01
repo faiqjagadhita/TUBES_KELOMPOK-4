@@ -75,3 +75,42 @@ int main() {
                 case 4:
                     tampilAbsensi(user);
                     break;
+
+                case 5: { // KELOLA PEGAWAI
+                    bool kelola = true;
+                    while (kelola) {
+                        int kp;
+                        cout << "\n===== KELOLA PEGAWAI =====\n";
+                        cout << "1. Tambah Pegawai\n";
+                        cout << "2. Ubah Pegawai\n";
+                        cout << "3. Hapus Pegawai\n";
+                        cout << "4. Kembali ke Menu Admin\n";
+                        cout << "Pilih: ";
+                        cin >> kp;
+
+                        switch (kp) {
+                        case 1:
+                            tambahPegawai(root);
+                            saveCSV(root, "data_pegawai.csv");
+                            break;
+
+                        case 2:
+                            ubahPegawai(root);
+                            saveCSV(root, "data_pegawai.csv");
+                            break;
+
+                        case 3:
+                            hapusPegawai(root);
+                            saveCSV(root, "data_pegawai.csv");
+                            break;
+
+                        case 4:
+                            kelola = false;
+                            break;
+
+                        default:
+                            cout << "Pilihan tidak valid!\n";
+                        }
+                    }
+                    break;
+                }
