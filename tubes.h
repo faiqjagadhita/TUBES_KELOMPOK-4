@@ -34,3 +34,4 @@ void inorderBST(adrPegawai root);
 // khusus admin
 void tambahPegawai(adrPegawai& root);
 void ubahPegawai(adrPegawai root);
+adrPegawai findMin(adrPegawai root);
