@@ -11,3 +11,8 @@ int main() {
         cout << "\n===== LOGIN PEGAWAI =====\n";
         cout << "Masukkan ID Pegawai (0 untuk keluar): ";
         cin >> idLogin;
+
+        if (idLogin == 0) {
+            cout << "Keluar dari program...\n";
+            break;
+        }
