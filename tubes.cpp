@@ -368,3 +368,15 @@ void tambahAbsensi(adrPegawai p, string tanggal, string jam) {
         curr->next = a;
     }
 }
+
+void tampilAbsensi(adrPegawai p) {
+    Absensi* a = p->firstAbsensi;
+    if (!a) {
+        cout << "Belum ada absensi.\n";
+        return;
+    }
+    while (a) {
+        cout << a->tanggal << " | " << a->jamMasuk << endl;
+        a = a->next;
+    }
+}
