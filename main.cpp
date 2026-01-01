@@ -173,3 +173,7 @@ int main() {
                     cout << "Absensi berhasil!\n";
                     break;
                 }
+
+                case 3:
+                    tampilAbsensi(user);
+                    break;
