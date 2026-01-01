@@ -22,3 +22,5 @@ struct Pegawai {
     Pegawai* left;
     Pegawai* right;
 };
+
+typedef Pegawai* adrPegawai;
