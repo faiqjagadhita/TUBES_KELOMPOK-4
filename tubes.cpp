@@ -68,3 +68,76 @@ void inorderBST(adrPegawai root) {
 
     inorderBST(root->right);
 }
+
+// Khusus Untuk Admin
+void tambahPegawai(adrPegawai& root) {
+    int id;
+    string nama, jabatan, role;
+    char pilih;
+
+    while (true) {
+        cout << "ID Pegawai: ";
+        cin >> id;
+
+        if (searchBST(root, id)) {
+            cout << "ID sudah terpakai!\n";
+            cout << "Masukkan ID lagi? (y/n): ";
+            cin >> pilih;
+
+            if (pilih == 'n' || pilih == 'N')
+                return;
+        } else {
+            break;
+        }
+    }
+
+    cin.ignore();
+    cout << "Nama Pegawai: ";
+    getline(cin, nama);
+
+    bool adaDirektur;
+    do {
+        adaDirektur = false;
+        cout << "Jabatan: ";
+        getline(cin, jabatan);
+
+        if (jabatan == "Direktur Utama") {
+            adrPegawai stack[100];
+            int top = -1;
+            adrPegawai curr = root;
+
+            while (curr || top != -1) {
+                while (curr) {
+                    stack[++top] = curr;
+                    curr = curr->left;
+                }
+                curr = stack[top--];
+
+                if (curr->jabatan == "Direktur Utama") {
+                    adaDirektur = true;
+                    break;
+                }
+                curr = curr->right;
+            }
+
+            if (adaDirektur) {
+                cout << "Direktur Utama sudah ada!\n";
+                cout << "Masukkan jabatan lagi? (y/n): ";
+                cin >> pilih;
+                cin.ignore();
+
+                if (pilih == 'n' || pilih == 'N')
+                    return;
+            }
+        }
+
+    } while (jabatan == "Direktur Utama" && adaDirektur);
+
+    cout << "Role (admin/user biasa): ";
+    getline(cin, role);
+
+    adrPegawai p = createPegawai(id, nama, jabatan, role);
+    insertBST(root, p);
+
+    cout << "Pegawai berhasil ditambahkan!\n";
+}
