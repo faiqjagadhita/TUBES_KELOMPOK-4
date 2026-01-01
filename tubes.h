@@ -45,3 +45,6 @@ void tampilAbsensi(adrPegawai p);
 
 /* ===== FILE ===== */
 void loadCSV(adrPegawai& root, string filename);
+void saveCSV(adrPegawai root, string filename);
+
+#endif
