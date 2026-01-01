@@ -380,3 +380,46 @@ void tampilAbsensi(adrPegawai p) {
         a = a->next;
     }
 }
+
+// memuat data pegawai dan absensi 
+void loadCSV(adrPegawai& root, string filename) {
+    ifstream file(filename);
+    string line;
+
+    while (getline(file, line)) {
+        stringstream ss(line);
+        string id, nama, jabatan, role, tanggal, jam;
+
+        getline(ss, id, ',');
+        getline(ss, nama, ',');
+        getline(ss, jabatan, ',');
+        getline(ss, role, ',');
+        getline(ss, tanggal, ',');
+        getline(ss, jam, ',');
+
+        // Cari pegawai di BST
+        adrPegawai p = searchBST(root, stoi(id));
+        if (!p) {
+            p = createPegawai(stoi(id), nama, jabatan, role);
+            insertBST(root, p);
+        }
+
+        // Tambahkan absensi di akhir linked list
+        if (tanggal != "-" && jam != "-") {
+            Absensi* a = new Absensi;
+            a->tanggal = tanggal;
+            a->jamMasuk = jam;
+            a->next = NULL;
+
+            if (!p->firstAbsensi) {
+                p->firstAbsensi = a;
+            } else {
+                Absensi* curr = p->firstAbsensi;
+                while (curr->next) curr = curr->next;
+                curr->next = a;
+            }
+        }
+    }
+
+    file.close();
+}
