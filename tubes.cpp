@@ -277,3 +277,29 @@ adrPegawai hapusPegawai(adrPegawai root, int id) {
     }
     return root;
 }
+
+void hapusPegawai(adrPegawai &root) {
+    int id;
+    adrPegawai cek;
+    char pilih;
+
+    while (true) {
+        cout << "Masukkan ID Pegawai yang akan dihapus: ";
+        cin >> id;
+
+        cek = searchBST(root, id);
+        if (!cek) {
+            cout << "ID tidak ada!\n";
+            cout << "Coba lagi? (y/n): ";
+            cin >> pilih;
+
+            if (pilih == 'n' || pilih == 'N')
+                return;
+        } else {
+            break;
+        }
+    }
+
+    root = hapusPegawai(root, id);
+    cout << "Pegawai berhasil dihapus.\n";
+}
