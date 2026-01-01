@@ -38,3 +38,6 @@ adrPegawai findMin(adrPegawai root);
 adrPegawai hapusPegawai(adrPegawai root, int id);
 void hapusPegawai(adrPegawai &root);
 void cariPegawai(adrPegawai root);
+
+/* ===== ABSENSI ===== */
+void tambahAbsensi(adrPegawai p, string tanggal, string jam);
