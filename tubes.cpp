@@ -347,3 +347,24 @@ void cariPegawai(adrPegawai root) {
         }
     }
 }
+
+// Menambahkan Absensi
+void tambahAbsensi(adrPegawai p, string tanggal, string jam) {
+    Absensi* a = new Absensi;
+    a->tanggal = tanggal;
+    a->jamMasuk = jam;
+    a->next = NULL;
+
+    if (!p->firstAbsensi) {
+        // Jika belum ada absensi sama sekali
+        p->firstAbsensi = a;
+    } else {
+        // Cari node terakhir
+        Absensi* curr = p->firstAbsensi;
+        while (curr->next) {
+            curr = curr->next;
+        }
+        // Tambahkan di akhir
+        curr->next = a;
+    }
+}
