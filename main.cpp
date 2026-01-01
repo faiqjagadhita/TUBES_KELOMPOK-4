@@ -22,3 +22,21 @@ int main() {
             cout << "ID tidak ditemukan!\n";
             continue;
         }
+
+        bool loginAktif = true;
+
+        /* ================= ADMIN ================= */
+        if (user->role == "admin") {
+            while (loginAktif) {
+                int pilih;
+                cout << "\n===== MENU ADMIN =====\n";
+                cout << "1. Lihat Profil Saya\n";
+                cout << "2. Lihat Daftar Pegawai\n";
+                cout << "3. Absensi Masuk\n";
+                cout << "4. Riwayat Absensi\n";
+                cout << "5. Kelola Pegawai\n";
+                cout << "6. Cari Pegawai\n";
+                cout << "7. Logout Akun\n";
+                cout << "8. Keluar Program\n";
+                cout << "Pilih: ";
+                cin >> pilih;
