@@ -248,3 +248,32 @@ adrPegawai findMin(adrPegawai root) {
     while (root->left) root = root->left;
     return root;
 }
+
+adrPegawai hapusPegawai(adrPegawai root, int id) {
+    if (!root) return root;
+
+    if (id < root->id)
+        root->left = hapusPegawai(root->left, id);
+    else if (id > root->id)
+        root->right = hapusPegawai(root->right, id);
+    else {
+        if (!root->left) {
+            adrPegawai temp = root->right;
+            delete root;
+            return temp;
+        }
+        if (!root->right) {
+            adrPegawai temp = root->left;
+            delete root;
+            return temp;
+        }
+
+        adrPegawai temp = findMin(root->right);
+        root->id = temp->id;
+        root->nama = temp->nama;
+        root->jabatan = temp->jabatan;
+        root->role = temp->role;
+        root->right = hapusPegawai(root->right, temp->id);
+    }
+    return root;
+}
