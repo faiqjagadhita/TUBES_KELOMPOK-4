@@ -11,3 +11,14 @@ struct Absensi {
     string jamMasuk;
     Absensi* next;
 };
+
+/* ===== PEGAWAI (BST) ===== */
+struct Pegawai {
+    int id;
+    string nama;
+    string jabatan;
+    string role;
+    Absensi* firstAbsensi;
+    Pegawai* left;
+    Pegawai* right;
+};
