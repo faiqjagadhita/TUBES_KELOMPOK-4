@@ -188,3 +188,10 @@ int main() {
                     loginAktif = false;
                     programJalan = false;
                     break;
+
+                default:
+                    cout << "Pilihan tidak valid!\n";
+                }
+            }
+        }
+    }
