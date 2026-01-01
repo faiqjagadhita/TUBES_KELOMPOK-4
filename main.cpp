@@ -7,3 +7,7 @@ int main() {
     bool programJalan = true;
 
     while (programJalan) {
+        int idLogin;
+        cout << "\n===== LOGIN PEGAWAI =====\n";
+        cout << "Masukkan ID Pegawai (0 untuk keluar): ";
+        cin >> idLogin;
