@@ -303,3 +303,47 @@ void hapusPegawai(adrPegawai &root) {
     root = hapusPegawai(root, id);
     cout << "Pegawai berhasil dihapus.\n";
 }
+
+void cariPegawai(adrPegawai root) {
+    int id;
+    adrPegawai p;
+    char pilih;
+
+    while (true) {
+        cout << "Masukkan ID Pegawai: ";
+        cin >> id;
+
+        p = searchBST(root, id);
+        if (!p) {
+            cout << "ID tidak ada!\n";
+            cout << "Cari lagi? (y/n): ";
+            cin >> pilih;
+
+            if (pilih == 'n' || pilih == 'N')
+                return;
+        } else {
+            break;
+        }
+    }
+
+    cout << "\n===== DATA PEGAWAI =====\n";
+    cout << "ID      : " << p->id << endl;
+    cout << "Nama    : " << p->nama << endl;
+    cout << "Jabatan : " << p->jabatan << endl;
+    cout << "Role    : " << p->role << endl;
+
+    cout << "\n===== RIWAYAT ABSENSI =====\n";
+
+    if (p->firstAbsensi == NULL) {
+        cout << "Belum ada riwayat absensi.\n";
+    } else {
+        Absensi* a = p->firstAbsensi;
+        int no = 1;
+        while (a) {
+            cout << no++ << ". "
+                 << a->tanggal << " | "
+                 << a->jamMasuk << endl;
+            a = a->next;
+        }
+    }
+}
