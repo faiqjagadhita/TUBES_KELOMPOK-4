@@ -48,3 +48,10 @@ int main() {
                          << "\nJabatan: " << user->jabatan
                          << "\nRole: " << user->role << endl;
                     break;
+
+                case 2:
+                    cout << "=================================================================================\n";
+                    cout << "| ID   | Nama            | Jabatan           | Role  | Riwayat Absensi            |\n";
+                    cout << "=================================================================================\n";
+                    inorderBST(root);
+                    break;
