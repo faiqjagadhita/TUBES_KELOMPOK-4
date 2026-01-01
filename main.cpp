@@ -119,3 +119,14 @@ int main() {
                     cariPegawai(root);
                     saveCSV(root, "data_pegawai.csv");
                     break;
+
+                case 7:
+                    cout << "Logout akun...\n";
+                    loginAktif = false;
+                    break;
+
+                case 8:
+                    cout << "Keluar dari program...\n";
+                    loginAktif = false;
+                    programJalan = false;
+                    break;
