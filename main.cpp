@@ -195,3 +195,7 @@ int main() {
             }
         }
     }
+
+    saveCSV(root, "data_pegawai.csv");
+    return 0;
+}
