@@ -243,3 +243,8 @@ void ubahPegawai(adrPegawai root) {
         }
     }
 }
+
+adrPegawai findMin(adrPegawai root) {
+    while (root->left) root = root->left;
+    return root;
+}
