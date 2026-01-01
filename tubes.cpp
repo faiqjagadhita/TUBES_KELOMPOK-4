@@ -423,3 +423,29 @@ void loadCSV(adrPegawai& root, string filename) {
 
     file.close();
 }
+
+// menyimpan data ke file csv
+void saveCSVHelper(adrPegawai root, ofstream& file) {
+    if (!root) return;
+
+    saveCSVHelper(root->left, file);
+
+    Absensi* a = root->firstAbsensi;
+    if (!a)
+        file << root->id << "," << root->nama << "," << root->jabatan
+             << "," << root->role << ",-,\n";
+    else
+        while (a) {
+            file << root->id << "," << root->nama << "," << root->jabatan
+                 << "," << root->role << "," << a->tanggal << "," << a->jamMasuk << "\n";
+            a = a->next;
+        }
+
+    saveCSVHelper(root->right, file);
+}
+
+void saveCSV(adrPegawai root, string filename) {
+    ofstream file(filename);
+    saveCSVHelper(root, file);
+    file.close();
+}
