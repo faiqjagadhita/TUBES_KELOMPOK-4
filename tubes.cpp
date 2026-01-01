@@ -27,3 +27,44 @@ adrPegawai searchBST(adrPegawai root, int id) {
     if (id < root->id) return searchBST(root->left, id);
     return searchBST(root->right, id);
 }
+
+void inorderBST(adrPegawai root) {
+    if (!root) return;
+
+    inorderBST(root->left);
+
+    Absensi* a = root->firstAbsensi;
+
+    if (!a) {
+        cout << "| " << setw(4) << root->id
+             << " | " << setw(15) << root->nama
+             << " | " << setw(16) << root->jabatan
+             << " | " << setw(5) << root->role
+             << " | " << setw(26) << "-" << " |\n";
+    } else {
+        bool pertama = true;
+        while (a) {
+            if (pertama) {
+                cout << "| " << setw(4) << root->id
+                     << " | " << setw(15) << root->nama
+                     << " | " << setw(16) << root->jabatan
+                     << " | " << setw(5) << root->role
+                     << " | " << setw(10) << a->tanggal
+                     << " " << setw(10) << a->jamMasuk << " |\n";
+                pertama = false;
+            } else {
+                cout << "| " << setw(4) << " "
+                     << " | " << setw(15) << " "
+                     << " | " << setw(16) << " "
+                     << " | " << setw(5) << " "
+                     << " | " << setw(10) << a->tanggal
+                     << " " << setw(10) << a->jamMasuk << " |\n";
+            }
+            a = a->next;
+        }
+    }
+
+    cout << "---------------------------------------------------------------------------------\n";
+
+    inorderBST(root->right);
+}
