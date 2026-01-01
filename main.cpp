@@ -157,3 +157,19 @@ int main() {
                          << "\nJabatan: " << user->jabatan
                          << "\nRole: " << user->role << endl;
                     break;
+
+                case 2: {
+                    string tanggal, jam;
+                    cin.ignore();
+
+                    cout << "Masukkan Tanggal (YYYY-MM-DD): ";
+                    getline(cin, tanggal);
+
+                    cout << "Masukkan Jam Masuk (HH:MM): ";
+                    getline(cin, jam);
+
+                    tambahAbsensi(user, tanggal, jam);
+                    saveCSV(root, "data_pegawai.csv");
+                    cout << "Absensi berhasil!\n";
+                    break;
+                }
