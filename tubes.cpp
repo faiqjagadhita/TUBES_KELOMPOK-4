@@ -386,7 +386,14 @@ void loadCSV(adrPegawai& root, string filename) {
     ifstream file(filename);
     string line;
 
+    if (!file.is_open()) {
+        cout << "Gagal membuka file CSV!\n";
+        return;
+    }
+
     while (getline(file, line)) {
+        if (line.empty()) continue;   
+
         stringstream ss(line);
         string id, nama, jabatan, role, tanggal, jam;
 
@@ -397,32 +404,33 @@ void loadCSV(adrPegawai& root, string filename) {
         getline(ss, tanggal, ',');
         getline(ss, jam, ',');
 
-        // Cari pegawai di BST
-        adrPegawai p = searchBST(root, stoi(id));
+        //  VALIDASI ID
+        if (id.empty()) continue;
+
+        for (char c : id) {
+            if (!isdigit(c)) {
+                id = "";
+                break;
+            }
+        }
+        if (id.empty()) continue;
+
+        int idPegawai = stoi(id);
+
+        adrPegawai p = searchBST(root, idPegawai);
         if (!p) {
-            p = createPegawai(stoi(id), nama, jabatan, role);
+            p = createPegawai(idPegawai, nama, jabatan, role);
             insertBST(root, p);
         }
 
-        // Tambahkan absensi di akhir linked list
-        if (tanggal != "-" && jam != "-") {
-            Absensi* a = new Absensi;
-            a->tanggal = tanggal;
-            a->jamMasuk = jam;
-            a->next = NULL;
-
-            if (!p->firstAbsensi) {
-                p->firstAbsensi = a;
-            } else {
-                Absensi* curr = p->firstAbsensi;
-                while (curr->next) curr = curr->next;
-                curr->next = a;
-            }
+        if (tanggal != "-" && jam != "-" && !tanggal.empty() && !jam.empty()) {
+            tambahAbsensi(p, tanggal, jam);
         }
     }
 
     file.close();
 }
+
 
 // menyimpan data ke file csv
 void saveCSVHelper(adrPegawai root, ofstream& file) {
