@@ -50,8 +50,8 @@ ada 11 Usecase dimana yang bisa diakses oleh kedua aktor itu ada melihat profil,
 
 ### 4.4 Tugas yang dikerjakan oleh Arzaqi Fatih Muttaqin di file tubes.cpp
 - Membuat fungsi adrPegawai createPegawai
-= Membuat fungsi void insertBST
-= Membuat fungsi adrPegawai searchBST
+- Membuat fungsi void insertBST
+- Membuat fungsi adrPegawai searchBST
 
 ## 5. Unguided
 ### 5.1 Unguided 1
