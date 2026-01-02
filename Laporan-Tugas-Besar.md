@@ -23,15 +23,32 @@ Actor : Admin & User Biasa
 Usecase : 
 ada 11 Usecase dimana yang bisa diakses oleh kedua aktor itu ada melihat profil, melakukkan absensi, melihat riwayat absensi, melakukan Logout, dan keluar program . Sementara usecase yang hanya bisa di akses oleh admin itu ada melihat daftar pegawai, mencari pegawai, mengelola pegawai dimana di dalam mengelola pegawai bisa tambah pegawai, ubah pegawai, dan hapus pegawai.
 
-## 4. Guided
-### 4.1 Guided 1
-[Penjelasan tentang guided pertama, termasuk kode yang telah diberikan dan cara kerjanya.]
+## 4. Pembagian Tugas
+### 4.1 Tugas yang dikerjakan bersama
+- seluruh isi file tubes.h atau headernya dikerjakan bersama
+- seluruh isi file main.cpp dikerjakan bersama
+- usecase diagram dikerjakan bersama
+- laporan dikerjakan bersama
 
-### 4.2 Guided 2
-[Penjelasan tentang guided kedua, meliputi kode dan penjelasan fungsinya.]
+### 4.2 Tugas yang dikerjakan oleh Rahmat Ahdaf Albariza di file tubes.cpp
+- Membuat fungsi void inorderBST
+- Membuat fungsi adrPegawai findMin
+- Membuat fungsi adrPegawai hapusPegawai
+- Membuat fungsi void hapusPegawai
+- Membuat fungsi void cariPegawai
+- Membuat fungsi void saveCSVHelper dan void saveCSV
 
-### 4.3 Guided 3
-[Penjelasan tentang guided ketiga yang sesuai dengan praktikum yang telah dilakukan.]
+### 4.3 Tugas yang dikerjakan oleh Fa'iq Jagadhita Hardiana di file tubes.cpp
+- Membuat fungsi void tambahPegawai
+- Membuat fungsi void ubahPegawai
+- Membuat fungsi void tambahAbsensi
+- Membuat fungsi void tampilAbsensi
+- Membuat fungsi void loadCSV
+
+### 4.4 Tugas yang dikerjakan oleh Arzaqi Fatih Muttaqin di file tubes.cpp
+- Membuat fungsi adrPegawai createPegawai
+= Membuat fungsi void insertBST
+= Membuat fungsi adrPegawai searchBST
 
 ## 5. Unguided
 ### 5.1 Unguided 1
