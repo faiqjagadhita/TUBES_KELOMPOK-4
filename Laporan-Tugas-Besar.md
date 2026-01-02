@@ -861,9 +861,11 @@ Data yang tersimpan dalam data_pegawai.csv dimuat ke dalam sistem saat program d
 
 ### 7.1 admin
 
+___
 ![](output/2.png)
 
 Penjelasan : Login menggunakan id, jika kamu login menggunakan id milik admin maka akan menampilkan menu admin. pada gambar login mengguankan id admin sehingga muncul menu admin yang menapilkan 8 pilihan menu seperti di foto
+___
 
 ![](output/3.png)
 
