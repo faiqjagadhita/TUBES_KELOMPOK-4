@@ -115,6 +115,7 @@ void saveCSV(adrPegawai root, string filename);
 ```
 
 Penjelasan : 
+
 File tubes.h merupakan header file yang berfungsi sebagai pusat deklarasi struktur data dan prototipe fungsi yang digunakan dalam program Aplikasi Data Pegawai. Header ini dirancang untuk memisahkan antara deklarasi dan implementasi program, sehingga meningkatkan keterbacaan kode, kemudahan pemeliharaan, serta penerapan konsep modular dalam pemrograman C++.
 
 Pada bagian awal, didefinisikan struktur Absensi yang direpresentasikan menggunakan Linked List. Struktur ini menyimpan informasi tanggal dan jam masuk pegawai, serta pointer next yang menunjuk ke data absensi berikutnya. Dengan menggunakan linked list, setiap pegawai dapat memiliki jumlah data absensi yang dinamis (tidak terbatas), sesuai dengan konsep relasi one-to-many antara pegawai dan absensi.
