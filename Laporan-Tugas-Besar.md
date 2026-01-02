@@ -19,11 +19,11 @@ Aplikasi Data Pegawai dengan Struktur Organisasi Tree & Sistem Absensi ini adala
 ![](output/1.png)
 
 Penjelasan :
+
 Actor :
 Admin & User Biasa
 
 Usecase :
-
 ada 11 Usecase dimana yang bisa diakses oleh kedua aktor itu ada melihat profil, melakukkan absensi, melihat riwayat absensi, melakukan Logout, dan keluar program . Sementara usecase yang hanya bisa di akses oleh admin itu ada melihat daftar pegawai, mencari pegawai, mengelola pegawai dimana di dalam mengelola pegawai bisa tambah pegawai, ubah pegawai, dan hapus pegawai.
 
 ## 4. Pembagian Tugas
