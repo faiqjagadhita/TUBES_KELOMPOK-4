@@ -927,6 +927,6 @@ Data yang tersimpan dalam data_pegawai.csv dimuat ke dalam sistem saat program d
 
 
 ## 8. Kesimpulan 
-Aplikasi Data Pegawai dengan Struktur Organisasi Tree & Sistem Absensi ini berhasil membantu pengelolaan data pegawai menjadi lebih rapi dan terstruktur. Dengan menggunakan Binary Search Tree (BST), proses penyimpanan, pencarian, dan pengelolaan data pegawai dapat dilakukan dengan lebih cepat dan teratur. Setiap pegawai juga memiliki data absensi sendiri yang disimpan menggunakan linked list, sehingga satu pegawai dapat memiliki banyak catatan absensi tanpa tercampur dengan data pegawai lainnya.
+Aplikasi Data Pegawai dengan Struktur Organisasi Tree & Sistem Absensi ini berhasil membantu pengelolaan data pegawai menjadi lebih rapi dan terstruktur. Dengan menggunakan Binary Search Tree (BST), proses penyimpanan, pencarian, dan pengelolaan data pegawai dapat dilakukan dengan lebih cepat dan teratur. Setiap pegawai juga memiliki data absensi sendiri yang disimpan menggunakan multilinked list, sehingga satu pegawai dapat memiliki banyak catatan absensi tanpa tercampur dengan data pegawai lainnya.
 
 Selain itu, aplikasi ini sudah dilengkapi dengan pembagian hak akses antara admin dan user biasa, sehingga keamanan dan pengelolaan data menjadi lebih terkontrol. Admin dapat menambah, mengubah, menghapus, serta mencari data pegawai, sedangkan user biasa hanya dapat melakukan absensi dan melihat data miliknya sendiri. Dengan adanya penyimpanan data ke dalam file CSV, data pegawai dan absensi juga tetap tersimpan meskipun program ditutup.
