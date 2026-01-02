@@ -53,7 +53,13 @@ ada 11 Usecase dimana yang bisa diakses oleh kedua aktor itu ada melihat profil,
 - Membuat fungsi void insertBST
 - Membuat fungsi adrPegawai searchBST
 
-## 5. Unguided
+## 5. Kesuliatan Selama Mengerjakan Tugas Besar
+- Komunikasi Antar Anggota
+  jadi karena banyaknya hari libur dan banyak yang pulang ke rumah masing-masing membuat komunikasi kami dalam mengerjakan tubes kurang baik.
+- Database CSV
+  Membaca dan menyimpan data absensi pegawai dari/ke CSV dengan format yang konsisten cukup sulit, karena baru pertama kali.
+
+  
 ### 5.1 Unguided 1
 [Penjelasan tentang unguided pertama, termasuk kode yang telah diimplementasikan oleh Anda.]
 
