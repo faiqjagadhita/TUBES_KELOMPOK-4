@@ -857,6 +857,58 @@ Atribut Tanggal Absensi dan Jam Masuk digunakan untuk mencatat riwayat kehadiran
 
 Data yang tersimpan dalam data_pegawai.csv dimuat ke dalam sistem saat program dijalankan melalui fungsi loadCSV. Pada proses ini, program akan membaca setiap baris, membentuk node pegawai pada BST berdasarkan ID, dan menambahkan data absensi ke dalam linked list yang sesuai. Sebaliknya, setiap perubahan data yang terjadi selama program berjalan, seperti penambahan pegawai, penghapusan pegawai, perubahan data, maupun pencatatan absensi, akan disimpan kembali ke file CSV melalui fungsi saveCSV. Dengan mekanisme ini, file CSV berperan sebagai penyimpanan data permanen yang menjaga konsistensi data antar eksekusi program.
 
-## 7. Referensi
+## 7. Output yang dihasilkan
+
+### 7.1 admin
+
+![](output/2.png)
+
+Penjelasan : Login menggunakan id jika kamu login menggunakan id milik admin maka kamu akan ke menu admin. di gambar login mengguankan id admin sehinggu muncul menu admin yang menapilkan 8 pilihan menu seperti di foto
+
+![](output/3.png)
+
+Penjelasan : pilih 1. Lihat profil saya, maka akan menapilkan profil pengguna yang sedang kamu gunakan.
+
+![](output/4.png)
+
+Penjelasan : pilih 2. Lihat daftar pegawai, maka akan menapilkan tabel daftar pegawai.
+
+![](output/5.png)
+
+Penjelasan : pilih 3. Absensi, maka akan menapilkan output yang menyuruh kita untuk melakukan input data absensi berupa tahun, bulan , tanggal , dan juga jam masuk , setelah menginputkan akan menampilkan pesan absensi telah berhasil.
+
+![](output/6.png)
+
+Penjelasan : pilih 4. Riwayat absensi, maka akan menampilkan riwayat absensi dari id yang kita gunakan 
+
+![](output/7.png)
+
+Penjelasan : pilih 5. Kelola Pegawai, maka akan menampilkan menu lagi berupa tambah pegawai, ubah pegawai, dan hapus pegawai
+
+- tambah pegawai : jika kita pilih 1. tambah pegawai, maka menapilkan output yang menyuruh kita untuk melakukan input data ID, Nama Pegawai, Jabatan, dan Role . setlah menginputkan data maka akan menampilkan pesan pegawai telah berhasil di tambahkan.
+  
+  ![](output/8.png) ![](output/9.png) ![](output/10.png) ![](output/11.png)
+- ubah pegawai : jika kita pilih 2. ubah pegawai, maka akan menampilkan menu ubah pegawai seperti ubah nama, ubah jabatan, ubah role, dan selesai . misal kita pilih 1 maka kita di suruh menginputkan nama baru dan akan menapilkan pesan update , belaku juga untuk pilihan yang lain.
+
+  ![](output/12.png)
+- Hapus pegawai : jika kita pilih 3. Hapus pegawai,  maka kita di suruh menginputkan id pegawai yang akan di hapus. setelah itu maka akan menapilkan pesan berhasil.
+
+[](output/13.png)
+
+Penjelasan : pilih 6. cari pegawai. maka kita di suruh menginputkan id pegawai yang akan di cari, setelah di inputkann maka akan menapilkan profil dari si pegawainya sendiri dan juga daftar riwayat absensi nya juga.
+
+[](output/14.png)
+
+penjelasan : pilih 7. Logout akun. maka  akan kembali ke menu login menggunakan id.
+
+[](output/15.png)
+
+Penjelasan : pilih 8. Keluar program, maka akan mengakhiri progam atau keluar dari progam.
+
+
+### 7.2 user biasa
+
+
+## 8. Referensi
 1. [Buku atau artikel yang Anda gunakan untuk referensi, jika ada]
 2. [Sumber lain yang relevan dengan topik praktikum ini]
