@@ -1,4 +1,4 @@
-# Template Laporan Praktikum Struktur Data
+# Laporan Pembuatan Aplikasi Data Pegawai dengan Struktur Organisasi Tree & Sistem Absensi
 
 ## 1. Anggota Kelompok
 
@@ -11,8 +11,8 @@ Nama : Arzaqi Fatih Muttaqin      /103112430092
 Kelas : 12-IF-05
 
 
-## 2. Motivasi Belajar Struktur Data
-[Isi dengan motivasi Anda dalam mempelajari struktur data, misalnya pentingnya struktur data dalam pengolahan informasi dan implementasi dalam dunia nyata.]
+## 2. Latar Belakang
+Aplikasi Data Pegawai dengan Struktur Organisasi Tree & Sistem Absensi ini adalah untuk membantu pengelolaan data pegawai agar lebih rapi, terstruktur, dan mudah diakses. Dalam aplikasi ini, data pegawai disusun menggunakan binary tree agar penyimpanan dan pencarian data dapat dilakukan secara lebih teratur. Selain itu, setiap pegawai memiliki data absensi masing-masing yang disimpan menggunakan multi linked list, sehingga satu pegawai dapat memiliki banyak catatan absensi yang saling terhubung tanpa tercampur dengan data pegawai lain.
 
 ## 3. Dasar Teori
 Contoh: Struktur data adalah cara untuk menyimpan dan mengorganisir data dalam komputer agar dapat digunakan secara efisien. Berikut adalah teori dasar mengenai **Graf** dan **Pohon**:
