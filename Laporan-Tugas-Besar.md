@@ -606,7 +606,227 @@ Proses penyimpanan data ke dalam file CSV diimplementasikan melalui fungsi saveC
 Secara keseluruhan, file tubes.cpp menunjukkan penerapan kombinasi struktur data BST dan Multi Linked List (satu tingkat)(one-to-many) dalam satu sistem yang saling terintegrasi. Implementasi ini tidak hanya mendukung efisiensi pengelolaan data pegawai dan absensi, tetapi juga mencerminkan penerapan konsep modularitas, validasi data, serta pengelolaan memori dinamis dalam pemrograman C++.
 
 ### 6.3 main.cpp
-[Penjelasan tentang unguided ketiga, termasuk aplikasi atau pengembangan lebih lanjut yang Anda lakukan.]
+```cpp
+#include "tubes.h"
+
+int main() {
+    adrPegawai root = NULL;
+    loadCSV(root, "data_pegawai.csv");
+
+    bool programJalan = true;
+
+    while (programJalan) {
+        int idLogin;
+        cout << "\n===== LOGIN PEGAWAI =====\n";
+        cout << "Masukkan ID Pegawai (0 untuk keluar): ";
+        cin >> idLogin;
+
+        if (idLogin == 0) {
+            cout << "Keluar dari program...\n";
+            break;
+        }
+
+        adrPegawai user = searchBST(root, idLogin);
+        if (!user) {
+            cout << "ID tidak ditemukan!\n";
+            continue;
+        }
+
+        bool loginAktif = true;
+
+        /* ================= ADMIN ================= */
+        if (user->role == "admin") {
+            while (loginAktif) {
+                int pilih;
+                cout << "\n===== MENU ADMIN =====\n";
+                cout << "1. Lihat Profil Saya\n";
+                cout << "2. Lihat Daftar Pegawai\n";
+                cout << "3. Absensi Masuk\n";
+                cout << "4. Riwayat Absensi\n";
+                cout << "5. Kelola Pegawai\n";
+                cout << "6. Cari Pegawai\n";
+                cout << "7. Logout Akun\n";
+                cout << "8. Keluar Program\n";
+                cout << "Pilih: ";
+                cin >> pilih;
+
+                switch (pilih) {
+                case 1:
+                    cout << "\nID: " << user->id
+                         << "\nNama: " << user->nama
+                         << "\nJabatan: " << user->jabatan
+                         << "\nRole: " << user->role << endl;
+                    break;
+
+                case 2:
+                    cout << "=================================================================================\n";
+                    cout << "| ID   | Nama            | Jabatan           | Role  | Riwayat Absensi            |\n";
+                    cout << "=================================================================================\n";
+                    inorderBST(root);
+                    break;
+
+                case 3: {
+                    string tanggal, jam;
+                    cin.ignore();
+
+                    cout << "Masukkan Tanggal (YYYY-MM-DD): ";
+                    getline(cin, tanggal);
+
+                    cout << "Masukkan Jam Masuk (HH:MM): ";
+                    getline(cin, jam);
+
+                    tambahAbsensi(user, tanggal, jam);
+                    saveCSV(root, "data_pegawai.csv");
+                    cout << "Absensi berhasil!\n";
+                    break;
+                }
+
+                case 4:
+                    tampilAbsensi(user);
+                    break;
+
+                case 5: { // KELOLA PEGAWAI
+                    bool kelola = true;
+                    while (kelola) {
+                        int kp;
+                        cout << "\n===== KELOLA PEGAWAI =====\n";
+                        cout << "1. Tambah Pegawai\n";
+                        cout << "2. Ubah Pegawai\n";
+                        cout << "3. Hapus Pegawai\n";
+                        cout << "4. Kembali ke Menu Admin\n";
+                        cout << "Pilih: ";
+                        cin >> kp;
+
+                        switch (kp) {
+                        case 1:
+                            tambahPegawai(root);
+                            saveCSV(root, "data_pegawai.csv");
+                            break;
+
+                        case 2:
+                            ubahPegawai(root);
+                            saveCSV(root, "data_pegawai.csv");
+                            break;
+
+                        case 3:
+                            hapusPegawai(root);
+                            saveCSV(root, "data_pegawai.csv");
+                            break;
+
+                        case 4:
+                            kelola = false;
+                            break;
+
+                        default:
+                            cout << "Pilihan tidak valid!\n";
+                        }
+                    }
+                    break;
+                }
+
+                case 6:
+                    cariPegawai(root);
+                    saveCSV(root, "data_pegawai.csv");
+                    break;
+
+                case 7:
+                    cout << "Logout akun...\n";
+                    loginAktif = false;
+                    break;
+
+                case 8:
+                    cout << "Keluar dari program...\n";
+                    loginAktif = false;
+                    programJalan = false;
+                    break;
+
+                default:
+                    cout << "Pilihan tidak valid!\n";
+                }
+            }
+        }
+
+        // ================= USER =================
+        else {
+            while (loginAktif) {
+                int pilih;
+                cout << "\n===== MENU USER BIASA =====\n";
+                cout << "1. Lihat Profil Saya\n";
+                cout << "2. Absensi Masuk\n";
+                cout << "3. Riwayat Absensi\n";
+                cout << "4. Logout Akun\n";
+                cout << "5. Keluar Program\n";
+                cout << "Pilih: ";
+                cin >> pilih;
+
+                switch (pilih) {
+                case 1:
+                    cout << "\nID: " << user->id
+                         << "\nNama: " << user->nama
+                         << "\nJabatan: " << user->jabatan
+                         << "\nRole: " << user->role << endl;
+                    break;
+
+                case 2: {
+                    string tanggal, jam;
+                    cin.ignore();
+
+                    cout << "Masukkan Tanggal (YYYY-MM-DD): ";
+                    getline(cin, tanggal);
+
+                    cout << "Masukkan Jam Masuk (HH:MM): ";
+                    getline(cin, jam);
+
+                    tambahAbsensi(user, tanggal, jam);
+                    saveCSV(root, "data_pegawai.csv");
+                    cout << "Absensi berhasil!\n";
+                    break;
+                }
+
+                case 3:
+                    tampilAbsensi(user);
+                    break;
+
+                case 4:
+                    cout << "Logout akun...\n";
+                    loginAktif = false;
+                    break;
+
+                case 5:
+                    cout << "Keluar dari program...\n";
+                    loginAktif = false;
+                    programJalan = false;
+                    break;
+
+                default:
+                    cout << "Pilihan tidak valid!\n";
+                }
+            }
+        }
+    }
+
+    saveCSV(root, "data_pegawai.csv");
+    return 0;
+}
+```
+
+Penjelasan : 
+
+File main.cpp merupakan titik masuk (entry point) dari program Aplikasi Data Pegawai. Pada bagian awal program, variabel root diinisialisasi sebagai NULL untuk menandakan bahwa struktur Binary Search Tree (BST) masih kosong. Selanjutnya, fungsi loadCSV dipanggil untuk memuat seluruh data pegawai dan absensi dari file data_pegawai.csv ke dalam BST, sehingga data yang tersimpan sebelumnya dapat langsung digunakan saat program dijalankan.
+
+Program kemudian berjalan di dalam sebuah loop utama yang memungkinkan sistem menerima beberapa sesi login secara berurutan tanpa harus menutup aplikasi. Proses login dilakukan dengan meminta pengguna memasukkan ID pegawai. Jika ID yang dimasukkan bernilai nol, maka program akan berhenti. Validasi ID dilakukan menggunakan fungsi searchBST, sehingga hanya pegawai yang terdaftar dalam sistem yang dapat mengakses fitur program.
+
+Setelah proses login berhasil, sistem akan membedakan hak akses pengguna berdasarkan atribut role. Apabila role pegawai adalah admin, maka pengguna akan diarahkan ke menu admin. Menu ini menyediakan fitur-fitur lengkap, seperti melihat profil pribadi, menampilkan seluruh data pegawai melalui traversal inorder BST, melakukan absensi masuk, melihat riwayat absensi, mengelola data pegawai (tambah, ubah, dan hapus), serta mencari data pegawai tertentu. Setiap perubahan data yang dilakukan oleh admin akan langsung disimpan ke dalam file CSV untuk menjaga konsistensi dan keutuhan data.
+
+Fitur absensi masuk memungkinkan admin maupun user biasa untuk mencatat kehadiran dengan memasukkan tanggal dan jam masuk. Data absensi ini kemudian ditambahkan ke linked list absensi milik pegawai yang sedang login melalui fungsi tambahAbsensi. Setelah absensi berhasil dicatat, fungsi saveCSV dipanggil agar data tersebut tersimpan secara permanen.
+
+Pada menu admin, fitur kelola pegawai diimplementasikan menggunakan submenu tersendiri yang memisahkan operasi tambah, ubah, dan hapus data pegawai. Pendekatan ini bertujuan untuk meningkatkan keterbacaan alur program serta memudahkan pengguna dalam mengelola data. Selain itu, admin juga diberikan fitur pencarian pegawai berdasarkan ID untuk menampilkan data secara spesifik tanpa harus menelusuri seluruh BST.
+
+Apabila pegawai yang login memiliki role user biasa, maka sistem hanya menampilkan menu dengan hak akses terbatas. User biasa hanya diperbolehkan melihat profil pribadi, melakukan absensi masuk, melihat riwayat absensi, serta melakukan logout atau keluar dari program. Pembatasan ini mencerminkan penerapan konsep role-based access control, di mana hak akses pengguna disesuaikan dengan peran masing-masing.
+
+Program juga menyediakan mekanisme logout yang memungkinkan pengguna keluar dari sesi login tanpa menutup aplikasi, sehingga pegawai lain dapat melakukan login selanjutnya. Selain itu, opsi keluar program disediakan baik pada menu admin maupun user biasa untuk menghentikan seluruh proses aplikasi secara aman.
+
+Sebelum program berakhir, fungsi saveCSV kembali dipanggil untuk memastikan seluruh perubahan data terakhir telah tersimpan ke dalam file CSV.
 
 ### 6.4 data_pegawai
 [Penjelasan tentang unguided ketiga, termasuk aplikasi atau pengembangan lebih lanjut yang Anda lakukan.]
