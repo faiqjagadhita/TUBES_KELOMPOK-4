@@ -59,18 +59,21 @@ ada 11 Usecase dimana yang bisa diakses oleh kedua aktor itu ada melihat profil,
 - Database CSV
   Membaca dan menyimpan data absensi pegawai dari/ke CSV dengan format yang konsisten cukup sulit, karena baru pertama kali.
 
-  
-### 5.1 Unguided 1
-[Penjelasan tentang unguided pertama, termasuk kode yang telah diimplementasikan oleh Anda.]
-
-### 5.2 Unguided 2
-[Penjelasan tentang unguided kedua, termasuk kode dan cara implementasinya.]
-
-### 5.3 Unguided 3
-[Penjelasan tentang unguided ketiga, termasuk aplikasi atau pengembangan lebih lanjut yang Anda lakukan.]
-
 ## 6. Kesimpulan
 [Isi dengan kesimpulan dari seluruh praktikum ini, apakah tujuan praktikum tercapai, dan bagaimana Anda mengimplementasikan dan memahami teori yang dipelajari.]
+
+
+### 5.1 tubes.h
+[Penjelasan tentang unguided pertama, termasuk kode yang telah diimplementasikan oleh Anda.]
+
+### 5.2 tubes.cpp
+[Penjelasan tentang unguided kedua, termasuk kode dan cara implementasinya.]
+
+### 5.3 main.cpp
+[Penjelasan tentang unguided ketiga, termasuk aplikasi atau pengembangan lebih lanjut yang Anda lakukan.]
+
+### 5.4 data_pegawai
+[Penjelasan tentang unguided ketiga, termasuk aplikasi atau pengembangan lebih lanjut yang Anda lakukan.]
 
 ## 7. Referensi
 1. [Buku atau artikel yang Anda gunakan untuk referensi, jika ada]
