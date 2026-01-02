@@ -69,7 +69,7 @@ ada 11 Usecase dimana yang bisa diakses oleh kedua aktor itu ada melihat profil,
 #include <string>
 using namespace std;
 
-/* ===== ABSENSI (Linked List) ===== */
+// ABSENSI(Multi Linked List(satutingkat/one-to-many))
 struct Absensi {
     string tanggal;
     string jamMasuk;
@@ -103,11 +103,11 @@ adrPegawai hapusPegawai(adrPegawai root, int id);
 void hapusPegawai(adrPegawai &root);
 void cariPegawai(adrPegawai root);
 
-/* ===== ABSENSI ===== */
+// ABSENSI
 void tambahAbsensi(adrPegawai p, string tanggal, string jam);
 void tampilAbsensi(adrPegawai p);
 
-/* ===== FILE ===== */
+// FILE CSV
 void loadCSV(adrPegawai& root, string filename);
 void saveCSV(adrPegawai root, string filename);
 
@@ -634,7 +634,7 @@ int main() {
 
         bool loginAktif = true;
 
-        /* ================= ADMIN ================= */
+        // MENU ADMIN 
         if (user->role == "admin") {
             while (loginAktif) {
                 int pilih;
@@ -746,7 +746,7 @@ int main() {
             }
         }
 
-        // ================= USER =================
+        // MENU USER BIASA
         else {
             while (loginAktif) {
                 int pilih;
