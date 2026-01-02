@@ -59,20 +59,83 @@ ada 11 Usecase dimana yang bisa diakses oleh kedua aktor itu ada melihat profil,
 - Database CSV
   Membaca dan menyimpan data absensi pegawai dari/ke CSV dengan format yang konsisten cukup sulit, karena baru pertama kali.
 
-## 6. Kesimpulan
-[Isi dengan kesimpulan dari seluruh praktikum ini, apakah tujuan praktikum tercapai, dan bagaimana Anda mengimplementasikan dan memahami teori yang dipelajari.]
+## 6. Program/Codingan
+### 6.1 tubes.h
+```cpp
+#ifndef TUBES_H
+#define TUBES_H
 
+#include <iostream>
+#include <string>
+using namespace std;
 
-### 5.1 tubes.h
-[Penjelasan tentang unguided pertama, termasuk kode yang telah diimplementasikan oleh Anda.]
+/* ===== ABSENSI (Linked List) ===== */
+struct Absensi {
+    string tanggal;
+    string jamMasuk;
+    Absensi* next;
+};
 
-### 5.2 tubes.cpp
+// Pegawai (BST)
+struct Pegawai {
+    int id;
+    string nama;
+    string jabatan;
+    string role;
+    Absensi* firstAbsensi;
+    Pegawai* left;
+    Pegawai* right;
+};
+
+typedef Pegawai* adrPegawai;
+
+// BST
+adrPegawai createPegawai(int id, string nama, string jabatan, string role);
+void insertBST(adrPegawai& root, adrPegawai p);
+adrPegawai searchBST(adrPegawai root, int id);
+void inorderBST(adrPegawai root);
+
+// khusus admin
+void tambahPegawai(adrPegawai& root);
+void ubahPegawai(adrPegawai root);
+adrPegawai findMin(adrPegawai root);
+adrPegawai hapusPegawai(adrPegawai root, int id);
+void hapusPegawai(adrPegawai &root);
+void cariPegawai(adrPegawai root);
+
+/* ===== ABSENSI ===== */
+void tambahAbsensi(adrPegawai p, string tanggal, string jam);
+void tampilAbsensi(adrPegawai p);
+
+/* ===== FILE ===== */
+void loadCSV(adrPegawai& root, string filename);
+void saveCSV(adrPegawai root, string filename);
+
+#endif
+```
+
+Penjelasan : 
+File tubes.h merupakan header file yang berfungsi sebagai pusat deklarasi struktur data dan prototipe fungsi yang digunakan dalam program Aplikasi Data Pegawai. Header ini dirancang untuk memisahkan antara deklarasi dan implementasi program, sehingga meningkatkan keterbacaan kode, kemudahan pemeliharaan, serta penerapan konsep modular dalam pemrograman C++.
+
+Pada bagian awal, didefinisikan struktur Absensi yang direpresentasikan menggunakan Linked List. Struktur ini menyimpan informasi tanggal dan jam masuk pegawai, serta pointer next yang menunjuk ke data absensi berikutnya. Dengan menggunakan linked list, setiap pegawai dapat memiliki jumlah data absensi yang dinamis (tidak terbatas), sesuai dengan konsep relasi one-to-many antara pegawai dan absensi.
+
+Struktur Pegawai merepresentasikan data utama pegawai dan diorganisasikan menggunakan Binary Search Tree (BST). Setiap node Pegawai menyimpan atribut berupa id, nama, jabatan, dan role (admin atau user), serta pointer firstAbsensi yang menunjuk ke linked list absensi milik pegawai tersebut. Selain itu, terdapat pointer left dan right yang digunakan untuk membentuk struktur BST berdasarkan id pegawai, sehingga proses pencarian, penambahan, dan penghapusan data dapat dilakukan secara efisien.
+
+Tipe data adrPegawai didefinisikan sebagai pointer ke struktur Pegawai untuk mempermudah penulisan dan pemanggilan fungsi. Selanjutnya, dideklarasikan fungsi-fungsi dasar BST seperti createPegawai, insertBST, searchBST, dan inorderBST. Fungsi-fungsi ini digunakan untuk membuat node pegawai baru, menyisipkan data ke dalam BST, mencari pegawai berdasarkan ID, serta menampilkan data pegawai secara terurut.
+
+Bagian khusus admin menyediakan fungsi-fungsi pengelolaan data pegawai, antara lain tambahPegawai, ubahPegawai, hapusPegawai, dan cariPegawai. Fungsi findMin digunakan sebagai pendukung dalam proses penghapusan node BST, khususnya saat menghapus node yang memiliki dua anak. Dengan adanya pemisahan fitur admin ini, sistem mampu menerapkan konsep hak akses (role-based access control) secara sederhana.
+
+Selanjutnya, pada bagian ABSENSI, dideklarasikan fungsi tambahAbsensi dan tampilAbsensi. Fungsi tambahAbsensi digunakan untuk menambahkan data absensi baru ke linked list milik pegawai tertentu, sedangkan tampilAbsensi berfungsi untuk menampilkan seluruh riwayat absensi dari pegawai tersebut. Implementasi ini menunjukkan penggunaan kombinasi struktur data BST dan Multi Linked List (satu tingkat) dalam satu sistem.
+
+Terakhir, bagian FILE berisi deklarasi fungsi loadCSV dan saveCSV yang digunakan untuk membaca dan menyimpan data pegawai ke dalam file CSV. Fungsi loadCSV bertugas memuat data awal pegawai dari file ke dalam BST saat program dijalankan, sedangkan saveCSV digunakan untuk menyimpan kembali data pegawai ke dalam file saat program selesai. Dengan fitur ini, data pegawai dapat disimpan secara permanen dan digunakan kembali pada eksekusi program berikutnya.
+
+### 6.2 tubes.cpp
 [Penjelasan tentang unguided kedua, termasuk kode dan cara implementasinya.]
 
-### 5.3 main.cpp
+### 6.3 main.cpp
 [Penjelasan tentang unguided ketiga, termasuk aplikasi atau pengembangan lebih lanjut yang Anda lakukan.]
 
-### 5.4 data_pegawai
+### 6.4 data_pegawai
 [Penjelasan tentang unguided ketiga, termasuk aplikasi atau pengembangan lebih lanjut yang Anda lakukan.]
 
 ## 7. Referensi
