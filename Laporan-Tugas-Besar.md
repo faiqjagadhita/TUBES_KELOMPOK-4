@@ -828,8 +828,34 @@ Program juga menyediakan mekanisme logout yang memungkinkan pengguna keluar dari
 
 Sebelum program berakhir, fungsi saveCSV kembali dipanggil untuk memastikan seluruh perubahan data terakhir telah tersimpan ke dalam file CSV.
 
-### 6.4 data_pegawai
-[Penjelasan tentang unguided ketiga, termasuk aplikasi atau pengembangan lebih lanjut yang Anda lakukan.]
+### 6.4 data_pegawai.csv
+```csv
+1,bambang,Direktur Utama,admin,2026-01-01,08:00
+2,doni,Manajer,admin,2025-01-01,08:00
+3,layla,Manajer,admin,2025-01-01,08:00
+4,gusion,Supervisor,user biasa,2025-01-01,08:00
+5,kadita,Staff,user biasa,2025-01-01,08:00
+6,alucard,Staff,user biasa,2025-01-01,08:00
+7,siter,Staff,user biasa,2025-01-01,08:00
+8,ade,Staff,user biasa,2025-01-01,08:00
+9,blud,Supervisor,user biasa,2025-01-01,08:00
+10,granger,Staff,user biasa,2025-01-01,08:00
+11,sora,Staff,user biasa,2025-01-01,08:00
+12,obsidia,Staff,user biasa,2025-01-01,08:00
+13,ixia,Staff,user biasa,2025-01-01,08:00
+14,tigreal,Staff,user biasa,2025-01-01,08:00
+15,ucup,Staff,user biasa,2025-01-01,08:00
+```
+
+Penjelasan : 
+
+Berkas data_pegawai.csv berfungsi sebagai media penyimpanan data (database sederhana) pada Aplikasi Data Pegawai. File ini menggunakan format Comma Separated Values (CSV) yang menyimpan data dalam bentuk teks terstruktur, sehingga mudah dibaca, ditulis, dan diproses oleh program C++. Setiap baris pada file ini merepresentasikan satu entri data pegawai beserta informasi absensinya.
+
+Struktur data dalam file CSV terdiri dari enam atribut utama, yaitu ID Pegawai, Nama Pegawai, Jabatan, Role, Tanggal Absensi, dan Jam Masuk. Atribut ID Pegawai berfungsi sebagai kunci utama (primary key) yang bersifat unik dan digunakan sebagai dasar pengurutan serta pencarian data dalam struktur Binary Search Tree (BST) pada program. Atribut Nama dan Jabatan menyimpan informasi identitas dan posisi pegawai dalam organisasi, sedangkan atribut Role menentukan hak akses pengguna ke dalam sistem, yaitu sebagai admin atau user biasa.
+
+Atribut Tanggal Absensi dan Jam Masuk digunakan untuk mencatat riwayat kehadiran pegawai. Dalam implementasinya, satu pegawai dapat memiliki lebih dari satu baris data pada file CSV apabila memiliki beberapa riwayat absensi. Hal ini mencerminkan relasi one-to-many antara pegawai dan absensi, yang pada program direpresentasikan menggunakan struktur data Linked List. Jika seorang pegawai belum memiliki riwayat absensi tambahan, maka data absensi awal tetap disimpan sebagai referensi awal kehadiran.
+
+Data yang tersimpan dalam data_pegawai.csv dimuat ke dalam sistem saat program dijalankan melalui fungsi loadCSV. Pada proses ini, program akan membaca setiap baris, membentuk node pegawai pada BST berdasarkan ID, dan menambahkan data absensi ke dalam linked list yang sesuai. Sebaliknya, setiap perubahan data yang terjadi selama program berjalan, seperti penambahan pegawai, penghapusan pegawai, perubahan data, maupun pencatatan absensi, akan disimpan kembali ke file CSV melalui fungsi saveCSV. Dengan mekanisme ini, file CSV berperan sebagai penyimpanan data permanen yang menjaga konsistensi data antar eksekusi program.
 
 ## 7. Referensi
 1. [Buku atau artikel yang Anda gunakan untuk referensi, jika ada]
