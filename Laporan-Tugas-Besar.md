@@ -886,7 +886,7 @@ Data yang tersimpan dalam data_pegawai.csv dimuat ke dalam sistem saat program d
   
   Penjelasan : pilih 5. Kelola Pegawai, maka akan menampilkan menu lagi berupa tambah pegawai, ubah pegawai, dan hapus pegawai
   
-  -![](output/8.png)
+  - ![](output/8.png)
   - tambah pegawai : jika kita pilih 1. tambah pegawai, maka menapilkan output yang menyuruh kita untuk melakukan input data ID, Nama Pegawai, Jabatan, dan Role . setlah menginputkan data maka akan menampilkan pesan pegawai telah berhasil di tambahkan.
     
   - ![](output/9.png) ![](output/10.png) ![](output/11.png) ![](output/12.png)
