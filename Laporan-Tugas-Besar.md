@@ -885,7 +885,7 @@ Penjelasan : pilih 4. Riwayat absensi, maka akan menampilkan riwayat absensi dar
 
 Penjelasan : pilih 5. Kelola Pegawai, maka akan menampilkan menu lagi berupa tambah pegawai, ubah pegawai, dan hapus pegawai
 
-- ![](output/8.png)
+  ![](output/8.png)
 - tambah pegawai : jika kita pilih 1. tambah pegawai, maka menapilkan output yang menyuruh kita untuk melakukan input data ID, Nama Pegawai, Jabatan, dan Role . setlah menginputkan data maka akan menampilkan pesan pegawai telah berhasil di tambahkan.
   
   ![](output/9.png) ![](output/10.png) ![](output/11.png) ![](output/12.png)
@@ -894,15 +894,15 @@ Penjelasan : pilih 5. Kelola Pegawai, maka akan menampilkan menu lagi berupa tam
   ![](output/13.png)
 - Hapus pegawai : jika kita pilih 3. Hapus pegawai,  maka kita di suruh menginputkan id pegawai yang akan di hapus. setelah itu maka akan menapilkan pesan berhasil.
 
-[](output/14.png)
+![](output/14.png)
 
 Penjelasan : pilih 6. cari pegawai. maka kita di suruh menginputkan id pegawai yang akan di cari, setelah di inputkann maka akan menapilkan profil dari si pegawainya sendiri dan juga daftar riwayat absensi nya juga.
 
-[](output/15.png)
+![](output/15.png)
 
 penjelasan : pilih 7. Logout akun. maka  akan kembali ke menu login menggunakan id.
 
-[](output/16.png)
+![](output/16.png)
 
 Penjelasan : pilih 8. Keluar program, maka akan mengakhiri progam atau keluar dari progam.
 
