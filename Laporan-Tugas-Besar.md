@@ -1,9 +1,12 @@
 # Template Laporan Praktikum Struktur Data
 
-## 1. Nama, NIM, Kelas
-- **Nama**: Rizal Wahyu Pratama
-- **NIM**: 0000000
-- **Kelas**: Sains Data-03
+## 1. Anggota Kelompok
+
+Nama : Rahmat Ahdaf Albariza      /103112430003
+Nama : Fa'iq Jagadhita Hardiana   /103112430015
+Nama : Arzaqi Fatih Muttaqin      /103112430092
+Kelas : 12-IF-05
+
 
 ## 2. Motivasi Belajar Struktur Data
 [Isi dengan motivasi Anda dalam mempelajari struktur data, misalnya pentingnya struktur data dalam pengolahan informasi dan implementasi dalam dunia nyata.]
