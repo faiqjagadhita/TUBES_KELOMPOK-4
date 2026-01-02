@@ -866,42 +866,53 @@ Data yang tersimpan dalam data_pegawai.csv dimuat ke dalam sistem saat program d
   
   Penjelasan : Login menggunakan id, jika kamu login menggunakan id milik admin maka akan menampilkan menu admin. pada gambar login mengguankan id admin sehingga muncul menu admin yang menapilkan 8 pilihan menu seperti di foto
   
+  
   ![](output/3.png)
   
   Penjelasan : pilih 1. Lihat profil saya, maka akan menapilkan profil pengguna yang sedang kamu gunakan.
+  
   
   ![](output/4.png)
   
   Penjelasan : pilih 2. Lihat daftar pegawai, maka akan menapilkan tabel daftar pegawai.
   
+  
   ![](output/5.png)
   
   Penjelasan : pilih 3. Absensi, maka akan menapilkan output yang menyuruh kita untuk melakukan input data absensi berupa tahun, bulan , tanggal , dan juga jam masuk , setelah menginputkan akan menampilkan pesan absensi telah berhasil.
   
+  
   ![](output/6.png)
   
   Penjelasan : pilih 4. Riwayat absensi, maka akan menampilkan riwayat absensi dari id yang kita gunakan 
+  
   
   ![](output/7.png)
   
   Penjelasan : pilih 5. Kelola Pegawai, maka akan menampilkan menu lagi berupa tambah pegawai, ubah pegawai, dan hapus pegawai
   
   - ![](output/8.png)
+    
     tambah pegawai : jika kita pilih 1. tambah pegawai, maka menapilkan output yang menyuruh kita untuk melakukan input data ID, Nama Pegawai, Jabatan, dan Role . setlah menginputkan data maka akan menampilkan pesan pegawai telah berhasil di tambahkan.
     
   - ![](output/9.png) ![](output/10.png) ![](output/11.png) ![](output/12.png)
+    
     ubah pegawai : jika kita pilih 2. ubah pegawai, maka akan menampilkan menu ubah pegawai seperti ubah nama, ubah jabatan, ubah role, dan selesai . misal kita pilih 1 maka kita di suruh menginputkan nama baru dan akan menapilkan pesan update , belaku juga untuk pilihan yang lain.
   
   - ![](output/13.png)
+    
     Hapus pegawai : jika kita pilih 3. Hapus pegawai,  maka kita di suruh menginputkan id pegawai yang akan di hapus. setelah itu maka akan menapilkan pesan berhasil.
+    
   
   ![](output/14.png)
   
   Penjelasan : pilih 6. cari pegawai. maka kita di suruh menginputkan id pegawai yang akan di cari, setelah di inputkann maka akan menapilkan profil dari si pegawainya sendiri dan juga daftar riwayat absensi nya juga.
   
+  
   ![](output/15.png)
   
   penjelasan : pilih 7. Logout akun. maka  akan kembali ke menu login menggunakan id.
+  
   
   ![](output/16.png)
   
@@ -915,6 +926,7 @@ Data yang tersimpan dalam data_pegawai.csv dimuat ke dalam sistem saat program d
   Penjelasan : jika login menggunaakan id user biasa, maka akan menapilkan tampilan menu user bisa yang hanya ada 5 pilihan yaitu liat profil, absensi masuk, riwayat absensi, logout akun, dan keluar progam. dimana cara kerja dari pilihan menu pada user biasa sama dengan pilihan menu pada admin yang sesuai dengan namanya.
 
 
-## 8. Referensi
-1. [Buku atau artikel yang Anda gunakan untuk referensi, jika ada]
-2. [Sumber lain yang relevan dengan topik praktikum ini]
+## 8. Kesimpulan 
+Aplikasi Data Pegawai dengan Struktur Organisasi Tree & Sistem Absensi ini berhasil membantu pengelolaan data pegawai menjadi lebih rapi dan terstruktur. Dengan menggunakan Binary Search Tree (BST), proses penyimpanan, pencarian, dan pengelolaan data pegawai dapat dilakukan dengan lebih cepat dan teratur. Setiap pegawai juga memiliki data absensi sendiri yang disimpan menggunakan linked list, sehingga satu pegawai dapat memiliki banyak catatan absensi tanpa tercampur dengan data pegawai lainnya.
+
+Selain itu, aplikasi ini sudah dilengkapi dengan pembagian hak akses antara admin dan user biasa, sehingga keamanan dan pengelolaan data menjadi lebih terkontrol. Admin dapat menambah, mengubah, menghapus, serta mencari data pegawai, sedangkan user biasa hanya dapat melakukan absensi dan melihat data miliknya sendiri. Dengan adanya penyimpanan data ke dalam file CSV, data pegawai dan absensi juga tetap tersimpan meskipun program ditutup.
