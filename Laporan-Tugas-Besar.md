@@ -865,27 +865,32 @@ Data yang tersimpan dalam data_pegawai.csv dimuat ke dalam sistem saat program d
   ![](output/2.png)
   
   Penjelasan : Login menggunakan id, jika kamu login menggunakan id milik admin maka akan menampilkan menu admin. pada gambar login mengguankan id admin sehingga muncul menu admin yang menapilkan 8 pilihan menu seperti di foto
+
   
   
   ![](output/3.png)
   
   Penjelasan : pilih 1. Lihat profil saya, maka akan menapilkan profil pengguna yang sedang kamu gunakan.
+
   
   
   ![](output/4.png)
   
   Penjelasan : pilih 2. Lihat daftar pegawai, maka akan menapilkan tabel daftar pegawai.
+
   
   
   ![](output/5.png)
   
   Penjelasan : pilih 3. Absensi, maka akan menapilkan output yang menyuruh kita untuk melakukan input data absensi berupa tahun, bulan , tanggal , dan juga jam masuk , setelah menginputkan akan menampilkan pesan absensi telah berhasil.
+
   
   
   ![](output/6.png)
   
   Penjelasan : pilih 4. Riwayat absensi, maka akan menampilkan riwayat absensi dari id yang kita gunakan 
   
+
   
   ![](output/7.png)
   
@@ -903,20 +908,24 @@ Data yang tersimpan dalam data_pegawai.csv dimuat ke dalam sistem saat program d
     
     Hapus pegawai : jika kita pilih 3. Hapus pegawai,  maka kita di suruh menginputkan id pegawai yang akan di hapus. setelah itu maka akan menapilkan pesan berhasil.
     
+
   
   ![](output/14.png)
   
   Penjelasan : pilih 6. cari pegawai. maka kita di suruh menginputkan id pegawai yang akan di cari, setelah di inputkann maka akan menapilkan profil dari si pegawainya sendiri dan juga daftar riwayat absensi nya juga.
   
+
   
   ![](output/15.png)
   
   penjelasan : pilih 7. Logout akun. maka  akan kembali ke menu login menggunakan id.
+
   
   
   ![](output/16.png)
   
   Penjelasan : pilih 8. Keluar program, maka akan mengakhiri progam atau keluar dari progam.
+
 
 
 ### 7.2 user biasa
