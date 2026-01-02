@@ -3,8 +3,11 @@
 ## 1. Anggota Kelompok
 
 Nama : Rahmat Ahdaf Albariza      /103112430003
+
 Nama : Fa'iq Jagadhita Hardiana   /103112430015
+
 Nama : Arzaqi Fatih Muttaqin      /103112430092
+
 Kelas : 12-IF-05
 
 
