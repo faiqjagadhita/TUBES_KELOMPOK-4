@@ -932,7 +932,7 @@ Data yang tersimpan dalam data_pegawai.csv dimuat ke dalam sistem saat program d
 
   ![](output/17.png)
 
-  Penjelasan : jika login menggunaakan id user biasa, maka akan menapilkan tampilan menu user bisa yang hanya ada 5 pilihan yaitu liat profil, absensi masuk, riwayat absensi, logout akun, dan keluar progam. dimana cara kerja dari pilihan menu pada user biasa sama dengan pilihan menu pada admin yang sesuai dengan namanya.
+  Penjelasan : jika login menggunaakan id user biasa, maka akan menapilkan tampilan menu user bisa yang hanya ada 5 pilihan yaitu 1. liat profil, 2. absensi masuk, 3. riwayat absensi, 4. logout akun, dan 5. keluar progam. dimana cara kerja dari pilihan menu pada user biasa itu sama dengan pilihan menu pada admin, karena seperti yang kita tahu di usecase diagram ada 5 ucecase yang sama sama bisa di akses oleh kedua aktor tersebut yang membedakan hanya nomer piliahanya pada menu masing masing.
 
 
 ## 8. Kesimpulan 
